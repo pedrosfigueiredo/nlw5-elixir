@@ -21,7 +21,7 @@ defmodule InmanaWeb.ErrorView do
 
   @doc """
   Handles error in the user request.
-  Uses `Changeset.traverse_errors/2` to traverse the error message.
+  Uses `Ecto.Changeset.traverse_errors/2` to traverse the error message.
   Example can be found on [the official doc for Ecto changeset](https://hexdocs.pm/ecto/Ecto.Changeset.html#traverse_errors/2)
   """
   def translate_errors(changeset) do
