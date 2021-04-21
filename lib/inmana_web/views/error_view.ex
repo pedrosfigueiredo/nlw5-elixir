@@ -19,6 +19,10 @@ defmodule InmanaWeb.ErrorView do
     %{message: translate_errors(changeset)}
   end
 
+  def render("error.json", %{result: result}) do
+    %{message: result}
+  end
+
   @doc """
   Handles error in the user request.
   Uses `Ecto.Changeset.traverse_errors/2` to traverse the error message.
