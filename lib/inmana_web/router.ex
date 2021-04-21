@@ -10,7 +10,10 @@ defmodule InmanaWeb.Router do
 
     get "/", WelcomeController, :index
     post "/restaurants", RestaurantsController, :create
-    post "/supplies", SuppliesController, :create
+
+    # resources macro to create routes automatically
+    # view created routes with `mix phx.routes`
+    resources "/supplies", SuppliesController, only: [:create, :show]
   end
 
   # Enables LiveDashboard only for development

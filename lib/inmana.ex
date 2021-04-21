@@ -10,7 +10,9 @@ defmodule Inmana do
   # define alias since module Create would be ambiguous
   alias Inmana.Restaurants.Create, as: RestaurantCreation
   alias Inmana.Supply.Create, as: SupplyCreation
+  alias Inmana.Supply.Retrieve, as: RetrieveSupply
 
   defdelegate create_restaurant(params), to: RestaurantCreation, as: :call
   defdelegate create_supply(params), to: SupplyCreation, as: :call
+  defdelegate get_supply(params), to: RetrieveSupply, as: :get_by_uuid
 end
