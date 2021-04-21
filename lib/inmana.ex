@@ -7,7 +7,10 @@ defmodule Inmana do
   if it comes from the database, an external API or others.
   """
 
-  alias Inmana.Restaurants.Create
+  # define alias since module Create would be ambiguous
+  alias Inmana.Restaurants.Create, as: RestaurantCreation
+  alias Inmana.Supply.Create, as: SupplyCreation
 
-  defdelegate create_restaurant(params), to: Create, as: :call
+  defdelegate create_restaurant(params), to: RestaurantCreation, as: :call
+  defdelegate create_supply(params), to: SupplyCreation, as: :call
 end
